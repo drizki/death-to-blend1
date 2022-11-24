@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>Death to Blend1</AssemblyName>
+    <RootNamespace>Death_to_Blend1</RootNamespace>
+    <ApplicationIcon>trash.ico</ApplicationIcon>
+    <StartupObject>Death_to_Blend1.App</StartupObject>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>DeathtoBlend1</PackageId>
+	<PublishSingleFile>true</PublishSingleFile>
+	<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+	<PlatformTarget>x64</PlatformTarget>
+
+	<IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="folder.png" />
+    <None Remove="trash.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Windows7APICodePack-Shell" Version="1.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="folder.png" />
+    <Resource Include="trash.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>
